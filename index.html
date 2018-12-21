@@ -16,6 +16,10 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Bootstrap Theme</title>
   </head>
@@ -188,7 +192,6 @@
     </Section>
 
     <!--Video Play-->
-
     <section id="video-play">
       <div class="dark-overlay">
         <div class="row">
@@ -209,6 +212,141 @@
         </div>
       </div>
     </section>
+
+    <!--Photo Gallery-->
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <h1 class="text-center">Photo Gallery</h1>
+        <p class="text-center">Check out our photos</p>
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/collection/1991429/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-height="560"
+              data-width="560"
+              ><img
+                src="https://source.unsplash.com/collection/1991429/560x560"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/collection/2174705/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-height="560"
+              data-width="560"
+              ><img
+                src="https://source.unsplash.com/collection/2174705/560x560"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/collection/2457924/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-height="560"
+              data-width="560"
+              ><img
+                src="https://source.unsplash.com/collection/2457924/560x560"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/collection/1589349/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-height="560"
+              data-width="560"
+              ><img
+                src="https://source.unsplash.com/collection/1589349/560x560"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/collection/1041/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-height="560"
+              data-width="560"
+              ><img
+                src="https://source.unsplash.com/collection/1041/560x560"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
+
+          <div class="col-md-4">
+            <a
+              href="https://source.unsplash.com/collection/2383401/560x560"
+              data-toggle="lightbox"
+              data-gallery="img-gallery"
+              data-height="560"
+              data-width="560"
+              ><img
+                src="https://source.unsplash.com/collection/2383401/560x560"
+                alt=""
+                class="img-fluid"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Newsletter-->
+    <section id="newsletter" class="text-center p-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Sign Up For Our Newsletter</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              ullam dicta id minima obcaecati magnam, ducimus deleniti. Iste,
+              veritatis quam?
+            </p>
+            <form action="" class="form-inline justify-content-center">
+              <input
+                type="text"
+                class="form-control mb-2 mr-2"
+                placeholder="Enter Name"
+              />
+              <input
+                type="text"
+                class="form-control mb-2 mr-2"
+                placeholder="Enter Email"
+              />
+              <button class="btn btn-primary mb-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer id="main-footer" class="text-center p-4">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>Copyright &copy; <span id="year"></span> Glozzom</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!--Video Modal-->
     <div class="modal fade" id="videoModal">
@@ -245,6 +383,7 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 
     <script>
       // Get the current year for the copyright
@@ -253,6 +392,12 @@
       $('.carousel').carousel({
         interval: 6000,
         pause: 'hover'
+      });
+
+      //Lightbox Init
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
       });
 
       // Video Play
