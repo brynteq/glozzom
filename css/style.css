@@ -9,6 +9,10 @@ body {
   padding-right: 1rem !important;
 }
 
+.navbar {
+  border-bottom: 2px solid #444;
+}
+
 .navbar .nav-item.active {
   border-left: #444 3px solid;
 }
